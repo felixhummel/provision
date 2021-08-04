@@ -1,0 +1,11 @@
+#!/bin/bash
+set -euo pipefail
+
+mkdir -p ~/.local/share/pandoc/templates/
+
+cd /tmp
+wget -q https://github.com/Wandmalfarbe/pandoc-latex-template/releases/download/v1.6.1/Eisvogel-1.6.1.tar.gz
+tar xf Eisvogel-*.tar.gz
+rm Eisvogel-*.tar.gz
+cp eisvogel.tex ~/.local/share/pandoc/templates/
+
