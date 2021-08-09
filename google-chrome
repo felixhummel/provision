@@ -1,0 +1,13 @@
+#!/bin/bash
+set -euo pipefail
+
+set -x
+sudo -i <<'ENDOFSUDO'
+cat <<'EOF' > /etc/apt/sources.list.d/google-chrome.list
+deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+EOF
+
+apt-get update
+apt-get -y install google-chrome-stable
+ENDOFSUDO
+
