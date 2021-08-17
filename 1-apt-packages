@@ -10,6 +10,7 @@ curl
 dnsutils
 firefox
 gettext
+haveged  # entropy FTW
 htop
 inotify-tools
 iotop
