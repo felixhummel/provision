@@ -1,0 +1,41 @@
+#!/bin/bash
+set -euo pipefail
+
+list_pkgs() {
+  cat <<'EOF' | awk '/^[^#]/ { print $1 }'
+atool
+autorandr
+bash-completion
+curl
+dnsutils
+firefox
+gettext
+htop
+inotify-tools
+iotop
+jnettop
+lftp
+lsof
+ncdu
+net-tools  # netstat
+network-manager-openvpn
+network-manager-openvpn-gnome 
+network-manager-vpnc-gnome
+nmap
+pwgen
+rsync
+sqlite3
+sqlite3-doc
+tmux
+tofrodos
+tree
+vim-nox
+wajig
+whois
+xclip
+EOF
+}
+
+set -x
+sudo apt-get update
+sudo apt-get install -y $(list_pkgs)
