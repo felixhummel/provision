@@ -1,0 +1,33 @@
+#!/bin/bash
+set -euo pipefail
+
+list_pkgs() {
+  cat <<'EOF' | awk '/^[^#]/ { print $1 }'
+atool
+bash-completion
+curl
+dnsutils
+haveged  # entropy FTW
+htop
+inotify-tools
+iotop
+lftp
+ncdu
+net-tools  # netstat
+nmap
+rsync
+sqlite3
+sqlite3-doc
+tmux
+tofrodos
+tree
+vim-nox
+wajig
+whois
+pwgen
+EOF
+}
+
+set -x
+sudo apt-get update
+sudo apt-get install -y $(list_pkgs)
