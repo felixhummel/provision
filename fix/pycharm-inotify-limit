@@ -2,10 +2,6 @@
 set -euo pipefail
 
 sudo -i bash -x <<'ENDOFSUDO'
-cat <<'EOF' > /etc/sysctl.d/idea.conf
-fs.inotify.max_user_watches = 524288
-EOF
-
+echo 'fs.inotify.max_user_watches = 524288' > /etc/sysctl.d/idea.conf
 sysctl -p --system
 ENDOFSUDO
-
