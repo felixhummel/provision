@@ -1,0 +1,10 @@
+#!/bin/bash
+set -euo pipefail
+
+src_host=$1
+
+sudo -i <<ENDOFSUDO
+systemctl stop docker
+rsync -avX --exclude 'backingFsBlockDev' $src_host:/var/lib/docker/volumes/ /var/lib/docker/volumes/
+systemctl start docker
+ENDOFSUDO
