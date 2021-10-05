@@ -3,5 +3,4 @@ set -euo pipefail
 
 set -x
 sudo add-apt-repository -y ppa:widelands-dev/widelands
-sudo apt-get update
 sudo apt-get -y install widelands

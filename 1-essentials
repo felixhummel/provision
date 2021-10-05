@@ -33,5 +33,4 @@ EOF
 }
 
 set -x
-sudo apt-get update
 sudo apt-get install -y $(list_pkgs)

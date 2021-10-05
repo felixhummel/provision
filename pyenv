@@ -24,7 +24,6 @@ zlib1g-dev
 "
 
 set -x
-sudo apt-get update
 sudo apt-get install -y $pkgs
 
 # https://github.com/pyenv/pyenv
