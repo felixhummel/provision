@@ -8,6 +8,7 @@ bash-completion
 curl
 dnsutils
 fail2ban
+fzf
 gpm
 haveged  # entropy FTW
 htop
