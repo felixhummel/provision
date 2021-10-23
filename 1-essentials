@@ -5,6 +5,7 @@ list_pkgs() {
   cat <<'EOF' | awk '/^[^#]/ { print $1 }'
 atool
 bash-completion
+cpufrequtils
 curl
 dnsutils
 fail2ban

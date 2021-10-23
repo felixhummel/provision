@@ -13,6 +13,7 @@ network-manager-openvpn-gnome
 network-manager-vpnc-gnome
 virt-manager
 xclip
+xfce4-cpufreq-plugin
 EOF
 }
 
