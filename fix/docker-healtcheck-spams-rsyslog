@@ -6,9 +6,15 @@ set -euo pipefail
 # Aug  5 23:42:51 f systemd[1]: run-docker-runtime\x2drunc-moby-5fa695a490ebcd267fedbc923739f3847a261dd1bcef92d854772da305bb0cd7-runc.N2lLLD.mount: Succeeded.
 # Thanks to gertjanklein for the fix https://github.com/docker/for-linux/issues/679
 
+# Same goes for lines like this
+# Nov  4 12:21:23 t systemd[1]: var-lib-docker-overlay2-4b97e5c2a977ff7359cc8c94ef40862efa7afc48bb523d19e8d91e166b98dfb4-merged.mount: Succeeded.
+
 sudo -i <<'ENDOFSUDO'
 cat <<'EOF' > /etc/rsyslog.d/01-blocklist.conf
 if $msg contains "run-docker-runtime" and $msg contains ".mount: Succeeded." then {
+    stop
+}
+if $msg contains "var-lib-docker-overlay2" and $msg contains ".mount: Succeeded." then {
     stop
 }
 EOF
