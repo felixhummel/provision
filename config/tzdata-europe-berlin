@@ -1,0 +1,8 @@
+#!/bin/bash
+set -euo pipefail
+
+sudo -i <<'ENDOFSUDO'
+echo 'tzdata tzdata/Zones/Etc select UTC' | debconf-set-selections
+echo 'tzdata tzdata/Areas select Europe' | debconf-set-selections
+echo 'tzdata tzdata/Zones/Europe select Berlin' | debconf-set-selections
+ENDOFSUDO
