@@ -1,0 +1,9 @@
+#!/bin/bash
+set -euo pipefail
+
+# https://github.com/tomnomnom/gron/releases
+cd /tmp
+wget https://github.com/tomnomnom/gron/releases/download/v0.6.1/gron-linux-amd64-0.6.1.tgz
+tar xf gron-linux-*.tgz
+rm gron-linux-*.tgz
+sudo mv gron /usr/local/bin/
