@@ -1,0 +1,17 @@
+#!/bin/bash
+set -euo pipefail
+
+sudo -i <<'ENDOFSUDO'
+cd /etc/apt
+
+[[ -d .git ]] || git init
+
+if [[ -f .gitignore ]]; then
+  echo "SKIPPING .gitignore" >&2
+else
+  cat <<'EOF' > .gitignore
+*~
+*.save
+EOF
+fi
+ENDOFSUDO
