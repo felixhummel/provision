@@ -1,0 +1,8 @@
+#!/bin/bash
+set -euo pipefail
+
+echo 'deb http://download.opensuse.org/repositories/home:/selmf/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/home:selmf.list
+curl -fsSL https://download.opensuse.org/repositories/home:selmf/xUbuntu_20.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_selmf.gpg > /dev/null
+sudo apt update
+sudo apt install yacreader
+
