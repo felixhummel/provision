@@ -12,6 +12,7 @@ else
   cat <<'EOF' > .gitignore
 *~
 *.save
+*.distUpgrade
 EOF
 fi
 ENDOFSUDO
