@@ -1,0 +1,18 @@
+#!/bin/bash
+set -euo pipefail
+
+# override locally. source:
+#   /usr/share/applications/signal-desktop.desktop
+# via https://askubuntu.com/a/1188825/36078
+cat <<'EOF' > ~/.local/share/applications/signal-desktop.desktop
+[Desktop Entry]
+Name=Signal
+Exec=/opt/Signal/signal-desktop --use-tray-icon --no-sandbox %U
+Terminal=false
+Type=Application
+Icon=signal-desktop
+StartupWMClass=Signal
+Comment=Private messaging from your desktop
+MimeType=x-scheme-handler/sgnl;x-scheme-handler/signalcaptcha;
+Categories=Network;InstantMessaging;Chat;
+EOF
