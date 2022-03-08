@@ -1,0 +1,12 @@
+#!/bin/bash
+set -euo pipefail
+
+sudo apt-get install -y autoconf
+cd /tmp
+wget https://github.com/matejak/argbash/archive/refs/tags/2.10.0.tar.gz -O argbash.tar.gz
+tar xf argbash.tar.gz
+cd argbash-2.10.0/resources/
+make install PREFIX=$HOME/.local
+cd -
+rm -r argbash-2.10.0
+rm argbash.tar.gz
