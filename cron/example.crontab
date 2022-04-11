@@ -1,5 +1,0 @@
-# vim: set ft=crontab :
-MAILTO=cron@example.com
-# m h  dom mon dow   command
-1 0 * * * /usr/local/sbin/check-apt-key-expired.sh
-
