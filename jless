@@ -1,0 +1,10 @@
+#!/bin/bash
+set -euo pipefail
+
+# https://pauljuliusmartinez.github.io/
+# via https://news.ycombinator.com/item?id=30273940
+cd /tmp
+curl -OL https://github.com/PaulJuliusMartinez/jless/releases/download/v0.7.1/jless-v0.7.1-x86_64-unknown-linux-gnu.zip
+unzip jless-v0.7.1-x86_64-unknown-linux-gnu.zip
+rm jless-v0.7.1-x86_64-unknown-linux-gnu.zip
+sudo mv jless /usr/local/bin/
