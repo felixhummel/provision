@@ -10,4 +10,3 @@ if [[ -n "$expired_keys" ]]; then
   done
   exit 1
 fi
-EOF
