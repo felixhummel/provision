@@ -1,9 +1,14 @@
 #!/bin/bash
 set -euo pipefail
 
+old="$PWD"
+
 cd $HOME
 git clone https://github.com/felixhummel/configs.git
 cd configs
 ./init --force --email "$USER@$(hostname -f)" --name "$USER"
 ./pluginstall
+
+cd "$old"
+
 exec $SHELL
