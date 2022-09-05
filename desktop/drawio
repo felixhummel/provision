@@ -1,5 +1,12 @@
 #!/bin/bash
 set -euo pipefail
 
-set -x
-sudo snap install drawio
+cd ~/apps
+# https://github.com/jgraph/drawio-desktop/releases
+wget -c https://github.com/jgraph/drawio-desktop/releases/download/v20.2.8/drawio-x86_64-20.2.8.AppImage
+filename=$(ls -v drawio-x86_64-* | tail -n1)
+chmod +x $filename
+
+rm -f ~/.bin/drawio
+ln -s ~/apps/$filename ~/.bin/drawio
+cd -
