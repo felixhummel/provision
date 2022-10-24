@@ -1,0 +1,8 @@
+#!/bin/bash
+set -euo pipefail
+
+cd /tmp/
+wget -c https://github.com/derailed/k9s/releases/download/v0.26.7/k9s_Linux_x86_64.tar.gz
+tar xf k9s_*.tar.gz
+mv k9s ~/.local/bin/
+rm k9s_*.tar.gz
