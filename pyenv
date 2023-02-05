@@ -29,4 +29,4 @@ sudo apt-get install -y $pkgs
 # https://github.com/pyenv/pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 # https://github.com/pyenv/pyenv-virtualenv
-git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
