@@ -2,8 +2,8 @@
 set -euo pipefail
 
 sudo -i <<'ENDOFSUDO'
+git init /etc/fail2ban
 cd /etc/fail2ban
-git init .
 git add .
 git commit -m 'initial'
 
