@@ -1,0 +1,9 @@
+#!/bin/bash
+set -euo pipefail
+
+
+cat <<EOF | xargs sudo apt-get install -y
+wamerican-huge
+wngerman
+wogerman
+EOF
