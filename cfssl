@@ -1,6 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 
-sudo wget https://github.com/cloudflare/cfssl/releases/download/v1.6.3/cfssl-bundle_1.6.3_linux_amd64 \
+sudo wget https://github.com/cloudflare/cfssl/releases/download/v1.6.3/cfssl_1.6.3_darwin_amd64 \
   -O /usr/local/bin/cfssl
 sudo chmod +x /usr/local/bin/cfssl
