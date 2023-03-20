@@ -1,0 +1,13 @@
+#!/bin/bash
+set -euo pipefail
+
+mkdir -p ~/games
+
+cd /tmp
+wget -c https://files.ioquake3.org/Linux.zip
+unzip Linux.zip 
+rm Linux.zip 
+unzip release-linux-x86_64.zip -d ~/games/ioquake3
+rm release-linux-x86_64.zip
+
+# cp baseq3/* ~/games/ioquake3/baseq3/
