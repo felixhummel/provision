@@ -1,0 +1,13 @@
+#!/bin/bash
+set -euo pipefail
+
+cd /tmp
+wget https://non-gnu.uvt.nl/debian/focal/mpv/mpv_0.35.1+fruit.2_amd64.deb
+sudo dpkg -i mpv_0.35.1+fruit.2_amd64.deb
+sudo apt --fix-broken install  # get dependencies :>
+# MPRIS D-Bus interface to integrate with https://github.com/felixhummel/bin/blob/master/music
+mkdir -p ~/.config/mpv/scripts/
+wget https://github.com/hoyon/mpv-mpris/releases/download/1.0/mpris.so -O ~/.config/mpv/scripts/mpris.so
+
+# Usage Example:
+# mpv --no-video --vo=null --ytdl-format='bestaudio/best' 'https://example.com/watch?some-video'
