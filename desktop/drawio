@@ -3,7 +3,7 @@ set -euo pipefail
 
 cd ~/apps
 # https://github.com/jgraph/drawio-desktop/releases
-wget -c https://github.com/jgraph/drawio-desktop/releases/download/v20.2.8/drawio-x86_64-20.2.8.AppImage
+wget -c https://github.com/jgraph/drawio-desktop/releases/download/v21.2.1/drawio-x86_64-21.2.1.AppImage
 filename=$(ls -v drawio-x86_64-* | tail -n1)
 chmod +x $filename
 
