@@ -10,5 +10,5 @@ wget https://github.com/phiresky/ripgrep-all/releases/download/v0.9.6/ripgrep_al
 tar xf ripgrep_all-v0.9.6-x86_64-unknown-linux-musl.tar.gz
 
 mkdir -p ~/.local/bin
-mv ripgrep_all-v0.9.6-x86_64-unknown-linux-musl/rga ~/.local/bin/
-chmod +x ~/.local/bin/rga
+cd ripgrep_all-v0.9.6-x86_64-unknown-linux-musl/
+mv rga rga-preproc ~/.local/bin/
