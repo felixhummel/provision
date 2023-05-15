@@ -1,0 +1,42 @@
+#!/bin/bash
+set -euo pipefail
+
+BINDIR=$HOME/.local/bin
+bin=$BINDIR/greenclip
+wget -qc https://github.com/erebe/greenclip/releases/download/v4.2/greenclip -O $bin
+chmod +x $bin
+echo $bin >&2
+
+cat <<EOF > ~/.config/greenclip.toml
+[greenclip]
+blacklisted_applications = []
+enable_image_support = true
+history_file = "$HOME/.cache/greenclip.history"
+image_cache_directory = "/tmp/greenclip"
+max_history_length = 50
+max_selection_size_bytes = 0
+static_history = []
+trim_space_from_selection = true
+use_primary_selection_as_input = true
+EOF
+
+mkdir -p ~/.config/systemd/user/
+
+cat <<EOF > ~/.config/systemd/user/greenclip.service
+[Unit]
+Description=Greenclip Clipboard Manager Daemon
+
+[Service]
+Environment="DISPLAY=:0.0"
+ExecStart=$bin daemon
+
+[Install]
+WantedBy=multiuser.target
+EOF
+systemctl --user daemon-reload
+systemctl --user enable --now greenclip
+
+cat <<EOF >&2
+journalctl --user -u greenclip.service
+rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+EOF
