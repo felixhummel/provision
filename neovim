@@ -2,5 +2,6 @@
 set -euo pipefail
 
 cd /tmp
-wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
-sudo dpkg -i nvim-linux64.deb
+
+wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage -O ~/.local/bin/nvim
+chmod +x ~/.local/bin/nvim 
