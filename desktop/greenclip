@@ -2,6 +2,8 @@
 set -euo pipefail
 
 BINDIR=$HOME/.local/bin
+mkdir -p $BINDIR
+
 bin=$BINDIR/greenclip
 wget -qc https://github.com/erebe/greenclip/releases/download/v4.2/greenclip -O $bin
 chmod +x $bin
