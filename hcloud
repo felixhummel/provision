@@ -3,7 +3,7 @@ set -euo pipefail
 
 cd /tmp
 # https://github.com/hetznercloud/cli/releases
-wget https://github.com/hetznercloud/cli/releases/download/v1.31.1/hcloud-linux-amd64.tar.gz
+wget https://github.com/hetznercloud/cli/releases/download/v1.36.0/hcloud-linux-amd64.tar.gz
 tar xf hcloud-linux-amd64.tar.gz
 sudo mv hcloud /usr/local/bin/
 rm hcloud-linux-amd64.tar.gz
