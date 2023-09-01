@@ -1,12 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-cd ~/apps
+cd /tmp
 # https://github.com/jgraph/drawio-desktop/releases
-wget -c https://github.com/jgraph/drawio-desktop/releases/download/v21.2.1/drawio-x86_64-21.2.1.AppImage
-filename=$(ls -v drawio-x86_64-* | tail -n1)
-chmod +x $filename
-
-rm -f ~/.bin/drawio
-ln -s ~/apps/$filename ~/.bin/drawio
-cd -
+wget -c https://github.com/jgraph/drawio-desktop/releases/download/v21.6.8/drawio-amd64-21.6.8.deb
+sudo dpkg -i drawio-amd64-*.deb
+rm drawio-amd64-*.deb
