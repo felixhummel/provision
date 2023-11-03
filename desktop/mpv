@@ -2,8 +2,10 @@
 set -euo pipefail
 
 cd /tmp
-wget https://non-gnu.uvt.nl/debian/focal/mpv/mpv_0.35.1+fruit.2_amd64.deb
-sudo dpkg -i mpv_0.35.1+fruit.2_amd64.deb
+
+# https://apt.fruit.je/ubuntu/jammy/mpv/
+wget https://apt.fruit.je/ubuntu/jammy/mpv/mpv_0.36.0+fruit.1_amd64.deb
+sudo dpkg -i mpv_0.36.0+fruit.1_amd64.deb
 sudo apt --fix-broken install  # get dependencies :>
 # MPRIS D-Bus interface to integrate with https://github.com/felixhummel/bin/blob/master/music
 mkdir -p ~/.config/mpv/scripts/
