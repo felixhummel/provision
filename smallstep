@@ -3,6 +3,6 @@ set -euo pipefail
 
 # https://smallstep.com/docs/step-cli/installation
 cd /tmp
-wget https://dl.step.sm/gh-release/cli/docs-cli-install/v0.18.0/step-cli_0.18.0_amd64.deb
+wget https://dl.smallstep.com/gh-release/cli/docs-cli-install/v0.24.4/step-cli_0.24.4_amd64.deb
 sudo dpkg -i step-cli_*_amd64.deb
 rm step-cli_*_amd64.deb
