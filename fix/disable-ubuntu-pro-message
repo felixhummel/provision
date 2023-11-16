@@ -1,0 +1,5 @@
+#!/bin/bash
+set -euo pipefail
+
+# https://askubuntu.com/a/1434762
+sudo ln -s -f /dev/null /etc/apt/apt.conf.d/20apt-esm-hook.conf
