@@ -1,0 +1,16 @@
+#!/bin/bash
+set -euo pipefail
+
+cd /tmp
+wget -q https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep-14.1.0-i686-unknown-linux-gnu.tar.gz
+
+tar xf ripgrep-*.tar.gz
+rm ripgrep-*.tar.gz
+
+cd ripgrep-*
+gzip doc/rg.1
+sudo cp doc/rg.1.gz /usr/local/share/man/man1/
+sudo cp rg /usr/local/bin/
+sudo cp complete/rg.bash /etc/bash_completion.d/
+
+rm -r /tmp/ripgrep-*
