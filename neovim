@@ -2,6 +2,7 @@
 set -euo pipefail
 
 
+sudo -i <<'ENDOFSUDO'
 wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage -O /usr/local/bin/nvim
 chmod +x /usr/local/bin/nvim
 
@@ -13,3 +14,4 @@ cp squashfs-root/nvim.desktop /usr/local/share/applications/
 mkdir -p /usr/share/icons/
 rsync -a squashfs-root/usr/share/icons/ /usr/share/icons/
 rm -r /tmp/squashfs-root/
+ENDOFSUDO
