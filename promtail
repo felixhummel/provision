@@ -2,7 +2,8 @@
 set -euo pipefail
 
 cd /tmp/
-wget -qc https://github.com/grafana/loki/releases/download/v2.7.3/promtail-linux-amd64.zip
+# https://github.com/grafana/loki/releases
+wget -qc https://github.com/grafana/loki/releases/download/v2.9.4/promtail-linux-amd64.zip
 unzip -q promtail-linux-amd64.zip
 rm promtail-linux-amd64.zip
 sudo mv promtail-linux-amd64 /usr/local/bin/promtail
