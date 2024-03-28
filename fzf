@@ -1,11 +1,12 @@
 #!/bin/bash
 set -euo pipefail
 
-if [[ -d ~/.fzf ]]; then
-  echo "already present: ~/.fzf"
-  exit 1
-fi
-
 # https://github.com/junegunn/fzf#using-git
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+if [[ ! -d ~/.fzf ]]; then
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+else
+  cd ~/.fzf
+  echo "CURRENT: $(git rev-parse HEAD)" >&2
+  git pull --ff-only
+fi
 ~/.fzf/install --key-bindings --completion --no-update-rc
