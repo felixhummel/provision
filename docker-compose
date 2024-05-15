@@ -1,7 +1,14 @@
 #!/bin/bash
 set -euo pipefail
 
-# https://docs.docker.com/compose/install/standalone/
-sudo curl -SsL https://github.com/docker/compose/releases/download/v2.26.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
+sudo -i <<'ENDOFSUDO'
+
+cat <<'EOF' > /usr/local/bin/docker-compose
+#!/bin/sh
+exec docker compose "$@"
+EOF
+
+chmod +x /usr/local/bin/docker-compose
+ENDOFSUDO
+
 docker-compose version
