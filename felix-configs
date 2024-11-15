@@ -2,11 +2,13 @@
 set -euo pipefail
 
 old="$PWD"
+home=${HOME:-/root}
+username=${USER:-root}
 
-cd ${HOME:-/root}
+cd $home
 git clone https://github.com/felixhummel/configs.git
 cd configs
-./init --force --email "$USER@$(hostname -f)" --name "$USER"
+./init --force --email "$username@$(hostname -f)" --name "$username"
 
 cd "$old"
 
