@@ -1,21 +1,19 @@
 #!/bin/bash
 set -euo pipefail
 
-list_pkgs() {
-  cat <<'EOF' | awk '/^[^#]/ { print $1 }'
-autorandr
-firefox
-gettext
-jnettop
-lsof
-network-manager-openvpn
-network-manager-openvpn-gnome 
-network-manager-vpnc-gnome
-virt-manager
-xclip
-xfce4-cpufreq-plugin
-EOF
-}
+args=(
+  autorandr
+  firefox
+  gettext
+  jnettop
+  lsof
+  network-manager-openvpn
+  network-manager-openvpn-gnome
+  network-manager-vpnc-gnome
+  virt-manager
+  xclip
+  xfce4-cpufreq-plugin
+)
 
 set -x
-sudo apt-get install -y $(list_pkgs)
+sudo apt-get install -y ${args[@]}
