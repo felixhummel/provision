@@ -24,6 +24,8 @@ EOF
 
 mkdir -p ~/.config/systemd/user/
 
+# user service should use default.target
+# https://unix.stackexchange.com/a/666515/120440
 cat <<EOF > ~/.config/systemd/user/greenclip.service
 [Unit]
 Description=Greenclip Clipboard Manager Daemon
@@ -33,7 +35,7 @@ Environment="DISPLAY=:0.0"
 ExecStart=$bin daemon
 
 [Install]
-WantedBy=multiuser.target
+WantedBy=default.target
 EOF
 systemctl --user daemon-reload
 systemctl --user enable --now greenclip
