@@ -6,10 +6,11 @@ cd /tmp
 # https://mpv.io/installation/
 # https://fruit.je/apt
 # https://apt.fruit.je/
+[[ -f /etc/os-release ]] && source /etc/os-release || UBUNTU_CODENAME=$(lsb_release -cs)
 sudo -i <<ENDOFSUDO
 curl --output-dir /etc/apt/trusted.gpg.d -O https://apt.fruit.je/fruit.gpg
 cat <<EOF > /etc/apt/sources.list.d/fruit.list
-deb http://apt.fruit.je/ubuntu $(lsb_release -sc) mpv
+deb http://apt.fruit.je/ubuntu $UBUNTU_CODENAME mpv
 EOF
 
 apt-get update
