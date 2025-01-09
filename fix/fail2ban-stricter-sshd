@@ -10,7 +10,7 @@ git commit -m 'initial'
 cat <<'EOF' > jail.local
 [sshd]
 mode = aggressive
-maxretry = 1
+maxretry = 3
 bantime  = 4h
 EOF
 
