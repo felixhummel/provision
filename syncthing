@@ -11,3 +11,8 @@ apt-get update
 
 apt-get install -y syncthing
 ENDOFSUDO
+
+# autostart
+mkdir -p ~/.config/autostart/
+cd ~/.config/autostart/
+ln -s /usr/share/applications/syncthing-start.desktop
