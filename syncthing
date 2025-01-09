@@ -1,0 +1,13 @@
+#!/bin/bash
+# shellcheck disable=SC2086
+set -euo pipefail
+
+# https://apt.syncthing.net/
+sudo -i <<'ENDOFSUDO'
+mkdir -p /etc/apt/keyrings
+curl -L -o /etc/apt/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+echo "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable" > /etc/apt/sources.list.d/syncthing.list
+apt-get update
+
+apt-get install -y syncthing
+ENDOFSUDO
