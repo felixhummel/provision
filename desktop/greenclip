@@ -22,25 +22,21 @@ trim_space_from_selection = true
 use_primary_selection_as_input = true
 EOF
 
-mkdir -p ~/.config/systemd/user/
-
-# user service should use default.target
-# https://unix.stackexchange.com/a/666515/120440
-cat <<EOF > ~/.config/systemd/user/greenclip.service
-[Unit]
-Description=Greenclip Clipboard Manager Daemon
-
-[Service]
-Environment="DISPLAY=:0.0"
-ExecStart=$bin daemon
-
-[Install]
-WantedBy=default.target
+cat <<EOF > ~/.config/autostart/greenclip.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=greenclip
+Comment=
+Exec=$HOME/.local/bin/greenclip daemon
+OnlyShowIn=XFCE;
+RunHook=0
+StartupNotify=false
+Terminal=false
+Hidden=false
 EOF
-systemctl --user daemon-reload
-systemctl --user enable --now greenclip
 
 cat <<EOF >&2
-journalctl --user -u greenclip.service
 rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 EOF
