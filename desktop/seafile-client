@@ -8,3 +8,7 @@ set -x
 sudo wget https://linux-clients.seafile.com/seafile.asc -O /usr/share/keyrings/seafile-keyring.asc
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/seafile-keyring.asc] https://linux-clients.seafile.com/seafile-deb/$UBUNTU_CODENAME/ stable main" | sudo tee /etc/apt/sources.list.d/seafile.list > /dev/null
 sudo apt-get update && sudo apt-get install -y seafile-gui seafile-cli
+
+mkdir -p ~/.config/autostart
+cd ~/.config/autostart
+ln -s /usr/share/applications/seafile.desktop
