@@ -1,0 +1,12 @@
+#!/bin/bash
+# shellcheck disable=SC2086
+set -euo pipefail
+
+# sudo apt purge scrcpy
+# sudo apt autoremove
+
+cd /tmp
+# https://github.com/Genymobile/scrcpy/releases/latest
+wget https://github.com/Genymobile/scrcpy/releases/download/v3.1/scrcpy-linux-x86_64-v3.1.tar.gz
+tar xf scrcpy-linux-x86_64-v3.1.tar.gz
+mv scrcpy-linux-x86_64-v3.1/scrcpy ~/.local/bin/
