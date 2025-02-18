@@ -3,6 +3,6 @@ set -euo pipefail
 
 cd /tmp
 # https://github.com/jgraph/drawio-desktop/releases
-wget -c https://github.com/jgraph/drawio-desktop/releases/download/v24.2.5/drawio-amd64-24.2.5.deb
+wget -c https://github.com/jgraph/drawio-desktop/releases/download/v26.0.9/drawio-amd64-26.0.9.deb
 sudo dpkg -i drawio-amd64-*.deb
 rm drawio-amd64-*.deb
