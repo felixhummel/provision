@@ -3,7 +3,7 @@ set -euo pipefail
 
 
 sudo -i <<'ENDOFSUDO'
-wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage -O /usr/local/bin/nvim
+wget https://github.com/neovim/neovim/releases/download/v0.10.4/nvim-linux-x86_64.appimage -O /usr/local/bin/nvim
 chmod +x /usr/local/bin/nvim
 
 cd /tmp
