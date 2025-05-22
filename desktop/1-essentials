@@ -7,13 +7,14 @@ args=(
   gettext
   jnettop
   lsof
-  network-manager-openvpn
-  network-manager-openvpn-gnome
-  network-manager-vpnc-gnome
+  # network-manager-openvpn
+  # network-manager-openvpn-gnome
+  # network-manager-vpnc-gnome
   virt-manager
   xclip
   xfce4-cpufreq-plugin
+  xfce4-panel-profiles
 )
 
 set -x
-sudo apt-get install -y ${args[@]}
+sudo apt-get install -y "${args[@]}"
