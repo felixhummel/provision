@@ -9,7 +9,7 @@ chmod +x /usr/local/bin/nvim
 cd /tmp
 /usr/local/bin/nvim --appimage-extract nvim.desktop
 mkdir -p /usr/local/share/applications/
-cp squashfs-root/nvim.desktop /usr/local/share/applications/
+desktop-file-install squashfs-root/nvim.desktop
 /usr/local/bin/nvim --appimage-extract usr/share/icons/hicolor/128x128/apps/nvim.png
 mkdir -p /usr/share/icons/
 rsync -a squashfs-root/usr/share/icons/ /usr/share/icons/
