@@ -1,7 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-
-# https://askubuntu.com/a/1434762
-sudo mv /etc/apt/apt.conf.d/20apt-esm-hook.conf /etc/apt/apt.conf.d/20apt-esm-hook.conf.bak
-sudo touch /etc/apt/apt.conf.d/20apt-esm-hook.conf
-sudo systemctl disable --now ubuntu-advantage

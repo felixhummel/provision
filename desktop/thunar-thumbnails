@@ -1,8 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-# thumbnails for thunar
-# https://askubuntu.com/a/1044319
-sudo apt-get -y install \
-  tumbler \
-  tumbler-plugins-extra \
-  ffmpegthumbnailer

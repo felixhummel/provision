@@ -1,8 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-
-cd /tmp/
-wget https://github.com/extrawurst/gitui/releases/download/v0.21.0/gitui-linux-musl.tar.gz
-tar xf gitui-linux-musl.tar.gz 
-mv ./gitui ~/.local/bin/
-rm gitui-linux-musl.tar.gz

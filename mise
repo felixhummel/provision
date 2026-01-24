@@ -1,6 +1,0 @@
-#!/bin/bash
-# shellcheck disable=SC2086
-set -euo pipefail
-
-# https://mise.jdx.dev/getting-started.html
-curl https://mise.run | sh

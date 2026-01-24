@@ -1,7 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-# disable splash screen and show kernel & systemd output instead
-sudo -i <<'ENDOFSUDO'
-sed -i -e 's/^GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/GRUB_CMDLINE_LINUX_DEFAULT=""/' /etc/default/grub
-update-grub
-ENDOFSUDO

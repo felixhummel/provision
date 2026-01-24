@@ -1,7 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-
-# https://borgbackup.readthedocs.io/en/stable/installation.html#standalone-binary
-sudo wget https://github.com/borgbackup/borg/releases/download/1.4.3/borg-linux-glibc235-x86_64-gh -O /usr/local/bin/borg
-sudo chmod +x /usr/local/bin/borg
-

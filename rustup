@@ -1,7 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-
-# https://rustup.rs/
-set -x
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > /tmp/rustup-installer
-sh /tmp/rustup-installer -y --no-modify-path

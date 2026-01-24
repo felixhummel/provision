@@ -1,8 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-
-set -x
-docker network create ingress
-git clone https://gitlab.com/hukudo/ingress.git ~/ingress
-cd ~/ingress
-docker-compose up -d --build --remove-orphans

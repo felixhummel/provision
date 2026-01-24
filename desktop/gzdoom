@@ -1,6 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-
-cd /tmp
-wget https://github.com/ZDoom/gzdoom/releases/download/g4.11.3/gzdoom_4.11.3_amd64.deb
-sudo dpkg -i gzdoom_4.11.3_amd64.deb

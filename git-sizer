@@ -1,8 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-
-set -x
-cd /tmp
-wget https://github.com/github/git-sizer/releases/download/v1.4.0/git-sizer-1.4.0-linux-amd64.zip
-unzip git-sizer-*-linux-amd64.zip git-sizer
-sudo mv git-sizer /usr/local/bin
