@@ -1,8 +1,7 @@
-MOVED TO https://codeberg.org/felixhummel/provision
-
-For existing installations:
-```bash
-git remote set-url origin https://codeberg.org/felixhummel/provision.git
+# MOVED
+[https://forge.felixhummel.de/felix/bin](https://forge.felixhummel.de/felix/provision)
+```
+git remote set-url origin https://forge.felixhummel.de/felix/provision.git
 git fetch
 git checkout main
 git reset --hard origin/main
