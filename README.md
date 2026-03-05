@@ -1,5 +1,5 @@
 # MOVED
-[https://forge.felixhummel.de/felix/bin](https://forge.felixhummel.de/felix/provision)
+https://forge.felixhummel.de/felix/provision
 ```
 git remote set-url origin https://forge.felixhummel.de/felix/provision.git
 git fetch
